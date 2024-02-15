@@ -1,0 +1,26 @@
+{
+    "name": "kody/validation",
+    "description": "Laravel basic validation which saves time in writing code.",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Kody\\Validation\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Meet",
+            "email": "meet.mehta@kodytechnolab.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Kody\\Common\\CommonServiceProvider"
+            ]
+        }
+    }
+}
