@@ -1,5 +1,5 @@
 {
-    "name": "kody/validation",
+    "name": "kody/common",
     "description": "Laravel basic validation which saves time in writing code.",
     "type": "library",
     "license": "MIT",
