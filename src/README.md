@@ -1,3 +1,3 @@
-# laravel validation
+# laravel Common package
 
-With this package you can maintain mobile number length properly
+which give you migration/models of device details and email verifications.
