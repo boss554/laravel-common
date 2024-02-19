@@ -6,5 +6,5 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Kody\\Validation\\' => array($baseDir . '/src'),
+    'Kody\\Common\\' => array($baseDir . '/src'),
 );

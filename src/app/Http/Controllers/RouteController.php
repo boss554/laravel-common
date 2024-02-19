@@ -1,6 +1,6 @@
 <?php
 
-namespace Kody\Common\app\Http\Controllers;
+namespace Kody\Common\App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 

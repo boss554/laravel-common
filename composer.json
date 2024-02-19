@@ -22,5 +22,10 @@
                 "Kody\\Common\\CommonServiceProvider"
             ]
         }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "@php artisan common:generate-folders"
+        ]
     }
 }

@@ -3,10 +3,11 @@
 namespace Kody\Common;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\File;
+use Illuminate\Console\Command;
 
 class CommonServiceProvider extends ServiceProvider
 {
-
     /**
      * Bootstrap services.
      */
@@ -29,5 +30,8 @@ class CommonServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
+        $this->commands([
+            Commands\GenerateFolderStructure::class,
+        ]);
     }
 }
