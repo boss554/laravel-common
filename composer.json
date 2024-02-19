@@ -1,6 +1,6 @@
 {
     "name": "kody/common",
-    "description": "This package is designed to provide you with built-in migrations and models for various functionalities",
+    "description": "",
     "type": "library",
     "license": "MIT",
     "autoload": {
@@ -14,18 +14,22 @@
             "email": "meetmehta554@gmail.com"
         }
     ],
+
     "minimum-stability": "dev",
     "require": {},
+    "scripts": {
+        "post-install-cmd": [
+            "@php artisan common:generate-folders"
+        ]
+    },
+
     "extra": {
         "laravel": {
             "providers": [
                 "Kody\\Common\\CommonServiceProvider"
             ]
         }
-    },
-    "scripts": {
-        "post-install-cmd": [
-            "@php artisan common:generate-folders"
-        ]
     }
+
+
 }
