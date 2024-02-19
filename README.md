@@ -50,9 +50,5 @@ After installing the package and publishing its assets, you can start using its 
 - **Implementing Email Verifications**: Easily integrate email verification functionality into your Laravel application using the provided model and migrations.
 
 ## Contribution
-
-If you encounter any issues or have suggestions for improvements, please feel free to contribute to the package by opening issues or pull requests on the GitHub repository.
-
 Thank you for choosing the Kody Common package! Happy coding!
-```
-This Markdown structure provides a clear and organized layout for your README file on GitHub. Feel free to customize it further according to your preferences!
+
