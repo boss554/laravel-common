@@ -3,8 +3,6 @@
 namespace Kody\Common;
 
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Facades\File;
-use Illuminate\Console\Command;
 
 class CommonServiceProvider extends ServiceProvider
 {
