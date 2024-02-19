@@ -19,6 +19,14 @@ php artisan vendor:publish --provider="Kody\Common\CommonServiceProvider"
 
 This command will publish necessary configuration files and assets to your Laravel application.
 
+
+
+This command will generate basic folder structures
+
+```bash
+php artisan common:generate-folders
+```
+
 ## Features
 
 ### Built-in Migrations and Models
