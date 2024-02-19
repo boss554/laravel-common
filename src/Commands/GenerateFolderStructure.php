@@ -14,7 +14,7 @@ class GenerateFolderStructure extends Command
     public function handle()
     {
 
-        if ($this->confirm('Do you want to generate the folder structure for your package?')) {
+        if ($this->confirm('Do you want to generate the folder structure for your project?')) {
             $this->generateFolderStructure();
         }
     }
