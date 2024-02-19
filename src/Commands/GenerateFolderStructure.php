@@ -53,9 +53,6 @@ class GenerateFolderStructure extends Command
         ];
 
 
-
-
-
         foreach ($folders as $folder) {
             if (!File::exists(base_path($folder))) {
                 File::makeDirectory(base_path($folder), 0755, true);
