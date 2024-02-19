@@ -23,29 +23,38 @@ class GenerateFolderStructure extends Command
     {
         $folders = [
             'resources/views/admin',
-            'resources/views/layouts/admin/app.blade.php',
-            'resources/views/layouts/admin/elements/footer.blade.php',
-            'resources/views/layouts/admin/elements/header.blade.php',
-            'resources/views/layouts/admin/elements/sidebar.blade.php',
-
-            'resources/views/customer',
-            'resources/views/layouts/customer/app.blade.php',
-            'resources/views/layouts/customer/elements/footer.blade.php',
-            'resources/views/layouts/customer/elements/header.blade.php',
-            'resources/views/layouts/customer/elements/sidebar.blade.php',
-
+            'resources/views/admin/layouts',
+            'resources/views/admin/layouts/elements',
 
             'public/admin_assets/css',
             'public/admin_assets/images',
             'public/admin_assets/js',
             'public/admin_assets/fonts',
 
+            'resources/views/customer',
+            'resources/views/customer/layouts',
+            'resources/views/customer/layouts/elements',
 
-            'public/customer_assets/js/css',
+            'public/customer_assets/css',
             'public/customer_assets/images',
             'public/customer_assets/js',
             'public/customer_assets/fonts',
         ];
+
+
+        $files = [
+            'resources/views/admin/layouts/elements/footer.blade.php',
+            'resources/views/admin/layouts/elements/header.blade.php',
+            'resources/views/admin/layouts/elements/sidebar.blade.php',
+
+            'resources/views/customer/layouts/elements/footer.blade.php',
+            'resources/views/customer/layouts/elements/header.blade.php',
+            'resources/views/customer/layouts/elements/sidebar.blade.php',
+        ];
+
+
+
+
 
         foreach ($folders as $folder) {
             if (!File::exists(base_path($folder))) {
@@ -56,6 +65,25 @@ class GenerateFolderStructure extends Command
             }
         }
 
-        $this->info('Folder structure generated successfully!');
+
+        foreach ($files as $file) {
+            // Define the content for each file
+            $fileContent = '';
+
+            // Check if the file doesn't exist and create it
+            if (!file_exists(base_path($file))) {
+                // Attempt to create the file and write content
+                $result = touch(base_path($file));
+                if ($result !== false) {
+                    echo "File created successfully: $file\n";
+                } else {
+                    echo "Failed to create file: $file\n";
+                }
+            } else {
+                echo "File already exists: $file\n";
+            }
+        }
+
+        $this->info('File structure generated successfully!');
     }
 }

@@ -1,6 +1,6 @@
 {
     "name": "kody/common",
-    "description": "",
+    "description": "This package is designed to provide you with built-in migrations and models for various functionalities",
     "type": "library",
     "license": "MIT",
     "autoload": {
