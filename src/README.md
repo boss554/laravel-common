@@ -1,138 +1,61 @@
-# Laravel Common Library
+````markdown
+# Welcome to the Kody Common Package!
 
-T
+This package is designed to provide you with built-in migrations and models for various functionalities such as SMS verification, settings management, and email verifications. It also includes a GUI for basic Laravel commands like migration, cache clearing, optimization, and more.
 
-This library provides classes for validating different types of data inputs in PHP. It includes the following classes:
+## Installation
 
-- `Validate`: contains functions for validating individual inputs, such as strings, numbers, and passwords.
-- `FormValidator`: uses the Validate class to validate form inputs and return errors.
-- `FileValidator`: it validate and uploading files. it takes in a $\_FILES object and a key to identify the file, and a target directory to upload the file.
-- `ErrorHandler`: returns error messages and it methods to handle errors for each particular form input.
+To install the Kody Common package, you can use Composer. Simply run the following command:
+
+```bash
+composer require kody/common
+```
+````
+
+After installing the package, you need to publish the package's assets using the following command:
+
+```bash
+php artisan vendor:publish --provider="Kody\Common\CommonServiceProvider"
+```
+
+This command will publish necessary configuration files and assets to your Laravel application.
+
+This command will generate basic folder structures
+
+```bash
+php artisan common:generate-folders
+```
 
 ## Features
 
-- Easy to Use
-- API like Laravel
-- File handling
-- Validation
-- Error handling
+### Built-in Migrations and Models
 
-## Requirements
+This package comes with pre-built migrations and models for the following functionalities:
 
-- PHP 7.0 or above.
+- **SMS Verification**: Easily implement SMS verification in your Laravel application.
+- **Settings Management**: Manage application settings efficiently using the provided model.
+- **Email Verifications**: Implement email verification functionality seamlessly.
 
-## Usage - How to use in core Php Form Validation
+### GUI for Laravel Basic Commands
 
-### FormValidator Class
+The package includes a GUI interface for executing basic Laravel commands. These commands include:
 
-The FormValidator class uses the Validate class to validate form inputs and return errors using Error Class.
-How to Use :
+- **Migration**: Run migrations directly from the GUI.
+- **Cache Clear**: Clear the application cache with a single click.
+- **Optimize**: Optimize your Laravel application for better performance.
+- **Run All Commands**: Execute all available commands conveniently from the GUI.
 
-1. Include the FormValidator class in your code by using require or include statement.
-2. Create an instance of the FormValidator class and store it in a variable.
-3. Call the validate method on the instance of the FormValidator class and pass the form data and validation rules to it as arguments.
-4. The validate method will validate the form data based on the rules and return true if the data is valid, and false otherwise.
-5. If the validate method returns false, you can access the error messages using the errors method on the instance of the FormValidator class.
+To access the GUI pages, simply navigate to `/route/gui` in your Laravel application.
 
-   ```
-   $path = "../../validation/validators/FormValidator.php";
-   indlude "$path";
-   use Validators\{FormValidator, FileValidator};
-   $obj = new FormValidator();
+## Usage
 
-   if (isset($_POST['submit'])) {
-   $validations = [
-       'name' => 'string',
-       'email' => 'email',
-       'phone' => 'numeric|min:10|max:10',
-       'docs' => 'required|filetype:txt'
-   ];
+After installing the package and publishing its assets, you can start using its features right away. Here are some common tasks you might perform:
 
-   if (!$obj->validate($_POST, $validations)->isError()) {
-       $file = new FileValidator($_FILES, "docs", "files");
-       $file->upload();
-       }
-   }
-   ```
+- **Running Migrations**: Execute migrations using Laravel's migration command or through the provided GUI.
+- **Implementing SMS Verification**: Utilize the provided SMS verification model and migrations to add SMS verification to your application.
+- **Managing Settings**: Use the settings model to store and manage various application settings.
+- **Implementing Email Verifications**: Easily integrate email verification functionality into your Laravel application using the provided model and migrations.
 
-   FormValidator class uses `ErrorHandler` Class to Handle Error :
-   Using isErro() method and all() we can list errors :
+## Contribution
 
-   if ($obj->isError() != false) {
-            echo '<div class="alert alert-danger" role="alert">';
-            foreach ($obj->all() as $error)
-                echo "<li>$error</li>";
-   echo '</div>';
-   }
-   To populate old value which was valid we can use old() method.
-
-```
-<div class="mb-3">
-	<label for="name" class="form-label">Name</label>
-	<input type="text" name="name" value='<?php echo "{$obj->old('name')}"; ?>' class="form-control" id="name" >
-</div>
-<div class="mb-3">
-	<label for="email" class="form-label">Email</label>
-	<input type="email" oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);" name="email" value='<?php echo "{$obj->old('email')}"; ?>' class="form-control" id="email" aria-describedby="emailHelp">
-</div>
-<div class="mb-3">
-	<label for="phone" class="form-label">Phone</label>
-	<input type="text" name="phone" value='<?php echo "{$obj->old('phone')}"; ?>' class="form-control" id="phone">
-</div>
-```
-
-### ErrorHandler Class
-
-The ErrorHandle class provides functions to handle and store error messages. The class has functions to set error messages, return all error messages, check if errors exist, and handle error messages.
-
-1. `isError()` : method checks if there are any errors stored in the object's `$errors` array and returns a boolean value indicating the presence of errors. If a `$key` is passed as a parameter, it will check if there are any errors stored for that specific key in the `$errors` array and return a boolean value accordingly.
-2. `all()` : method returns an array of all error messages stored in the object's `$errors` array.
-3. `old($key)`: The `old` method is a function in a PHP class used to return old values if the data was valid. It takes a single parameter, `$key`, which is used to retrieve the value from an array called `oldValues`.
-
-### Validate Class
-
-This is a PHP class named "Validate" that provides functions to validate different data types (integer, float, string, email, password) and also functions to get different data types (integer, string, length). The class also includes error handling functionality through inheritance of the "ErrorHandler" class.
-Following method :
-
-1.  `isInt`: Validates whether the input is an integer or not.
-2.  `isfloat`: Validates whether the input is a floating-point number or not.
-3.  `isString`: Validates whether the input is a string or not.
-4.  `isEmail`: Validates whether the input is a valid email address or not.
-5.  `getInt`: Returns the input as an integer, floating-point number or boolean (false) if it is not valid.
-6.  `getString`: Returns the input as a string or boolean (false) if it is not a valid string.
-7.  `getLength`: Returns the length of the input.
-8.  `checkMinimum`: Checks if the length of the input is greater than or equal to the specified length.
-9.  `checkMaximum`: Checks if the length of the input is less than or equal to the specified length.
-10. `checkPassword`: Validates the input as a password according to the specified regular expression.
-
-11. `extractInteger`: Extracts only the integer part from the input.
-
-12. `extractFloat`: Extracts only the floating-point number part from the input.
-13. `senitizeInput` : method is a security measure used to sanitize user input. It performs the following operations in the given order:
-
-    - Removes any whitespace from the beginning and end of the input string with `trim()`.
-
-    - Strips backslashes (`\`) from the input string with `stripslashes()`.
-    - Converts any special HTML characters in the input string to their corresponding HTML entities with `htmlspecialchars()`.
-
-The purpose of these operations is to make sure that the input data is free from any malicious content, such as scripts, that could potentially harm the application. The method returns the sanitized input as the result.
-
-### Steps to Add custom validation in this library:
-
-1. Create a validation method in the Validate Class that returns a boolean value. For example: public function checkEmail():bool in the Validate class.
-
-2. Map the validation key to the validation type in the match function inside getValidationType() in the FormValidation Class. For example, 'email' => CHECK_EMAIL.
-
-3. Map the $validationType to an error code in the getErrorMessage() method in the errorHandler class. For example, 'CHECK_EMAIL' => 'INVALID_DATATYPE_KEY'.
-
-4. Map the $errorCode to an error message in the $errorHandler property in the errorHandler class.. For example, 'INVALID_DATATYPE_KEY' => 'Invalid Data types'.
-
-5. Add a conditional statement for $validationType (CHECK_EMAIL) in the performValidation() method in FormValidator.
-   - Test using Validate Class method to perform the validation, If the validation fails call the setError() method, and
-   - Pass the error message using the getErrorMessage() method by passing the $validationType (If the validation fails) and other required arguments.
-
-### Important Notice for Library Users
-
-Please be aware that this library has not been fully tested and may contain bugs. If you encounter any issues while using this library, we kindly request that you report them in the Issues section of this repository. This will allow us to identify and resolve any problems as soon as possible.
-
-Thank you for your understanding and cooperation.
+Thank you for choosing the Kody Common package! Happy coding!

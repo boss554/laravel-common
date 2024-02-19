@@ -17,6 +17,7 @@
 
     "minimum-stability": "dev",
     "require": {},
+
     "scripts": {
         "post-install-cmd": [
             "@php artisan common:generate-folders"
