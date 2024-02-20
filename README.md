@@ -48,6 +48,15 @@ The package includes a GUI interface for executing basic Laravel commands. These
 
 To access the GUI pages, simply navigate to `/route/gui` in your Laravel application.
 
+![image](https://github.com/boss554/laravel-common/assets/66130671/98cb232f-ba55-4ac7-a82e-f4e3051d3691)
+
+
+### GUI for Module Structure Generator
+To access the GUI pages, simply navigate to `/generate` in your Laravel application.
+
+![image](https://github.com/boss554/laravel-common/assets/66130671/b1b12bff-bacb-4e32-a6ee-569aa9c670fd)
+
+
 ## Usage
 
 After installing the package and publishing its assets, you can start using its features right away. Here are some common tasks you might perform:
