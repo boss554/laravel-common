@@ -18,7 +18,9 @@ Route::get('clear/all', function () {
 
 Route::group(['namespace' => 'Kody\Common\app\http\controllers'], function () {
     Route::get('route/gui', 'RouteController@index')->name('route_gui');
-    Route::get('/generate', 'GenerateController@generate')->name('generate');
+
+    Route::get('/generate', 'GenerateController@index')->name('generate');
+    Route::post('/generate', 'GenerateController@generate')->name('structure_generate');
 });
 
 Route::get('cache', function () {
