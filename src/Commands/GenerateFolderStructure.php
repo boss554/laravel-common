@@ -31,6 +31,7 @@ class GenerateFolderStructure extends Command
             'public/admin_assets/js',
             'public/admin_assets/fonts',
 
+
             'resources/views/customer',
             'resources/views/customer/layouts',
             'resources/views/customer/layouts/elements',
@@ -41,12 +42,13 @@ class GenerateFolderStructure extends Command
             'public/customer_assets/fonts',
         ];
 
-
         $files = [
+            'resources/views/admin/app.blade.php',
             'resources/views/admin/layouts/elements/footer.blade.php',
             'resources/views/admin/layouts/elements/header.blade.php',
             'resources/views/admin/layouts/elements/sidebar.blade.php',
 
+            'resources/views/customer/app.blade.php',
             'resources/views/customer/layouts/elements/footer.blade.php',
             'resources/views/customer/layouts/elements/header.blade.php',
             'resources/views/customer/layouts/elements/sidebar.blade.php',
