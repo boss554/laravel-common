@@ -20,6 +20,7 @@ class CommonServiceProvider extends ServiceProvider
             __DIR__ . '/app/Models/DeviceDetail.php' => 'app/Models/DeviceDetail.php',
             __DIR__ . '/app/Models/EmailVerification.php' => 'app/Models/EmailVerification.php',
             __DIR__ . '/app/Models/Setting.php' => 'app/Models/Setting.php',
+            __DIR__ . '/app/Models/SmsVerification.php' => 'app/Models/SmsVerification.php',
         ]);
     }
 
